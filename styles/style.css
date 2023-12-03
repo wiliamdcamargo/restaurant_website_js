@@ -26,7 +26,12 @@ body {
 }
 
 .navbar {
+  padding: 1.5em;
   background-color: rgb(92, 2, 0);
+}
+nav ul {
+  padding-top: 1em;
+  display:flex;
 }
 
 .nav-item a {
@@ -39,21 +44,6 @@ body {
   color: rgb(211, 170, 170);
 }
 
-header nav ul {
-  display: flex;
-  justify-content: center !important;
-  flex-wrap: wrap;
-  margin: 0;
-  padding: 0;
-}
-
-header nav ul li {
-  list-style-type: none;
-}
-
-header nav ul li a {
-  display: inline-block;
-}
 
 #menu1 {
   background-image: url('/imgs/chickenimg.jpg');
@@ -168,61 +158,50 @@ img { /* PART 3 */
   } /* PART 3 */
 } /* PART 3 */
 
-@media screen and (max-width: 680px) {
-
-  header nav ul {
-      flex-direction: column;
-      align-items: center;
-  }
-
-  header nav ul li a {
-      padding: 0.5em;
-      border-top: none;
-  }
-
-  header nav ul li a:hover {
-      text-decoration: underline;
-      border-top: none;
-  }
-}
-
 #menu-toggle,
 .sandwich-icon {
   display: none;
 }
 
 @media screen and (max-width: 680px) {
-  .sandwich-icon,
+  nav ul {
+    display:flex;
+    flex-direction: column;
+  }
+
+  .sandwich-icon, 
   .sandwich-icon::before,
-  .sandwich-icon::after {
+  .sandwich-icon::after{
     display: block;
     width: 40px;
-    /* height: 25px; */
-    border-top: 5px solid white;
+    height: 25px;
+    border-top: 5px solid green;
     cursor: pointer;
-    margin: 1em auto;
-    padding: 0;
+    position: absolute;
+    transition: transform 0.5s ease-in-out;
   }
 
-  .sandwich-icon::before,
-  .sandwich-icon::after {
+  .sandwich-icon::before, .sandwich-icon::after {
       content: "";
-      /* display: block;
-      width: 40px;
-      border-top: 5px solid white;
-      position: absolute; after disappeared */
   }
 
-  /* .sandwich-icon::before {
-    top: 10px;
+  .sandwich-icon {
+    display:block;
+    position: absolute;
+    top: 1.5em;
+  }
+  .sandwich-icon::before {
+    top: 5px;
+    transition: transform 0.5s ease-in-out;
   }
 
-  .sandwich-icon::after {
-    top: -300px !important;
-  } */
+  .sandwich-icon::after{
+    top: 15px;
+    transition: transform 0.5s ease-in-out;
+  }
 
   .menu-toggle:checked+.sandwich-icon {
-      transform: translate(-10px, 15px) rotate(45deg);
+    transform: translate(-12px, 10px) rotate(45deg);
   }
 
   .menu-toggle:checked+.sandwich-icon::before {
@@ -230,18 +209,10 @@ img { /* PART 3 */
   }
 
   .menu-toggle:checked+.sandwich-icon:after {
-    transform: translate(0px, -42px) rotate(-90deg);
+    transform: translate(10px, -30px) rotate(-90deg);
   }
 
-  header nav ul {
-    max-height: 0;
-    overflow: hidden;
-    flex-direction: column;
-    transition: max-height 200ms ease-in-out;
-  }
-
-  .menu-toggle:checked~.sandwich-icon~ul {
-    max-height: 500px;
-    transition: max-height 200ms ease-in-out;
+  .menu-toggle:checked ~ nav ul li {
+    display:none;
   }
 }

@@ -5,19 +5,19 @@ const Navbar = () => {
   const navbarHeader = document.createElement('header');
   navbarContent.appendChild(navbarHeader);
 
-  const navbarNav = document.createElement('nav');
-  navbarHeader.appendChild(navbarNav);
-
   const checkbox = document.createElement('input');
   checkbox.setAttribute('id', 'menu-toggle');
   checkbox.setAttribute('class', 'menu-toggle');
   checkbox.setAttribute('type', 'checkbox');
-  navbarNav.appendChild(checkbox);
+  navbarHeader.appendChild(checkbox);
 
   const checkboxLabel = document.createElement('label');
   checkboxLabel.setAttribute('for', 'menu-toggle');
   checkboxLabel.setAttribute('class', 'sandwich-icon');
-  navbarNav.appendChild(checkboxLabel);
+  navbarHeader.appendChild(checkboxLabel);
+
+  const navbarNav = document.createElement('nav');
+  navbarHeader.appendChild(navbarNav);
   
   const navbarUL = document.createElement('ul');
   navbarNav.appendChild(navbarUL);

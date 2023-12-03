@@ -3,13 +3,9 @@ const Appetizers = () => { // PART 1
     appetizersContent.setAttribute('class', 'container'); // PART 1
 
     const appetizersHeader = document.createElement('h1'); // PART 1
-    appetizersHeader.setAttribute('class', 'text-center my-3 pt-5 mb-5'); // PART 1
-    appetizersHeader.innerHTML = 'APPETIZERS'; // PART 1
+       appetizersHeader.innerHTML = 'APPETIZERS'; // PART 1
     
     const appetizersDiv = document.createElement('div'); // PART 1
-    appetizersDiv.setAttribute('class', 'flex-container'); // PART 1
-    appetizersDiv.style.display = 'flex'; // PART 1
-    appetizersDiv.style.justifyContent = 'center'; // PART 1
     appetizersDiv.style.gap = '5px'; // PART 1
 
     const appertizersImgOne = document.createElement('img'); // PART 1
